@@ -1,0 +1,16 @@
+<section class="d-flex">
+    <%themeFolders.forEach((theme)=>{%>    
+        <div class="card m-2" style="width: 18rem;">
+            <img src="/themes/<%=theme%>/screenshot.png" class="card-img-top" alt="<%=theme%>">
+            <div class="card-body">
+                <h5 class="card-title"><%=theme%></h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a href="/<%=theme%>/customize" class="btn btn-primary">Customize</a>
+            </div>
+        </div>
+    <%})%>
+</section>
+<!-- <%themeFolders.forEach((theme)=>{%>
+    <p><%=theme%></p>
+    <img src="/img/<%=theme%>/screenshot.png" alt="<%=theme%>">
+<%})%> -->
