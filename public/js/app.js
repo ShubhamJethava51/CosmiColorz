@@ -4821,22 +4821,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 
 
-function changeColor(color) {
-  axios__WEBPACK_IMPORTED_MODULE_0___default().get("/theme/changeprimarycolor?primaryColor=%23".concat(color))["catch"](function (err) {
+function changeColor(primaryColor, secondaryColor, theme) {
+  axios__WEBPACK_IMPORTED_MODULE_0___default().get("/".concat(theme, "/changeprimarycolor?primaryColor=%23").concat(primaryColor, "&secondaryColor=%23").concat(secondaryColor))["catch"](function (err) {
     console.log(err);
   });
 } //change color when user select it
 
 
 var primaryColor = document.getElementById("primary");
+var secondaryColor = document.getElementById("secondary");
 var iframe = document.getElementById("themeShow");
-primaryColor.addEventListener("input", function () {
-  //removing # from color
-  var colorArr = primaryColor.value.split("");
-  colorArr.shift();
-  var color = colorArr.join(""); //calling function on event
+var apply = document.getElementById("applyButton");
+apply.addEventListener("click", function () {
+  // current url path
+  var urlAddress = window.location.pathname.split("/"); //removing # from color
 
-  changeColor(color);
+  var primaryColorArr = primaryColor.value.split("");
+  primaryColorArr.shift();
+  var finalPrimaryColor = primaryColorArr.join("");
+  var secondaryColorArr = secondaryColor.value.split("");
+  secondaryColorArr.shift();
+  var finalSecondaryColor = secondaryColorArr.join(""); //calling function on event
+
+  changeColor(finalPrimaryColor, finalSecondaryColor, urlAddress[1]);
   iframe.contentDocument.location.reload("true");
 });
 })();

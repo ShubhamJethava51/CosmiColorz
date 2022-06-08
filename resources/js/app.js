@@ -1,8 +1,10 @@
 import axios from "axios";
 
-function changeColor(color) {
+function changeColor(primaryColor, secondaryColor, theme) {
   axios
-    .get(`/theme/changeprimarycolor?primaryColor=%23${color}`)
+    .get(
+      `/${theme}/changeprimarycolor?primaryColor=%23${primaryColor}&secondaryColor=%23${secondaryColor}`
+    )
     .catch((err) => {
       console.log(err);
     });
@@ -10,14 +12,22 @@ function changeColor(color) {
 
 //change color when user select it
 let primaryColor = document.getElementById("primary");
+let secondaryColor = document.getElementById("secondary");
 let iframe = document.getElementById("themeShow");
-primaryColor.addEventListener("input", () => {
+let apply = document.getElementById("applyButton");
+apply.addEventListener("click", () => {
+  // current url path
+  let urlAddress = window.location.pathname.split("/");
   //removing # from color
-  const colorArr = primaryColor.value.split("");
-  colorArr.shift();
-  const color = colorArr.join("");
+  let primaryColorArr = primaryColor.value.split("");
+  primaryColorArr.shift();
+  let finalPrimaryColor = primaryColorArr.join("");
+
+  let secondaryColorArr = secondaryColor.value.split("");
+  secondaryColorArr.shift();
+  let finalSecondaryColor = secondaryColorArr.join("");
 
   //calling function on event
-  changeColor(color);
+  changeColor(finalPrimaryColor, finalSecondaryColor, urlAddress[1]);
   iframe.contentDocument.location.reload("true");
 });

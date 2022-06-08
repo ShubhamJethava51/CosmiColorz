@@ -7,7 +7,7 @@ initRoutes = (app) => {
 
   //customize
   app.get("/:themeName/customize", themeController().index);
-  app.get("/theme/changeprimarycolor", themeController().changePrimaryColor);
+  app.get("/:theme/changeprimarycolor", themeController().changePrimaryColor);
 };
 
 module.exports = initRoutes;
