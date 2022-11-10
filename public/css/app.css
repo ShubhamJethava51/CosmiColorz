@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: "Space Mono", monospace;
+}
+
+nav {
+  background-color: #F5F5F5;
+}
+
+.logoText {
+  font-weight: 700;
+}
+
+.nav-icon {
+  transition: all 0.15s ease-in;
+}
+.nav-icon:hover {
+  color: #4D96FF;
+}
+
+.nav-icon-logout {
+  transition: all 0.15s ease-in;
+}
+.nav-icon-logout:hover {
+  color: #FF6B6B;
+}
+
+li {
+  transition: all 0.15s ease-in;
+}
+
+.nav-right ul > .menu-li:nth-child(1):hover {
+  color: white;
+  background-color: #FF6B6B;
+}
+.nav-right ul > .menu-li:nth-child(2):hover {
+  color: white;
+  background-color: #FFD93D;
+}
+.nav-right ul > .menu-li:nth-child(2):hover > .category-content {
+  color: black;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.add-to-bag:hover {
+  background-color: #6BCB77;
+}
+
+.nav-left ul {
+  padding: 0;
+  margin: 0;
+}
+
+.menu {
+  list-style: none;
+}
+
+.disp-prod {
+  padding: 0 6rem 0 6rem;
+}
+
+.btn-primary {
+  display: inline-block;
+}
+.btn-primary:hover {
+  background-color: #4D96FF;
+}
+
+.forgotPass {
+  transition: all 0.15s ease-in;
+}
+.forgotPass:hover {
+  color: #FF6B6B;
+}
+
+.category-content {
+  background-color: #F5F5F5;
+  position: absolute;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.15s ease-in;
+}
+.category-content li:hover {
+  background-color: #ebebeb;
+}
+
+.menu-li:nth-child(2):hover > .category-content {
+  visibility: visible;
+  opacity: 1;
+}

@@ -1,13 +1,12 @@
 const homeController = require("../app/http/controllers/homeController");
-const themeController = require("../app/http/controllers/themeController");
+const authController = require("../app/http/controllers/authController");
+const categoryController = require("../app/http/controllers/categoryController");
+const adminCategoryController = require("../app/http/controllers/admin/categories/categoryController");
 
-initRoutes = (app) => {
-  //home
+function initRoutes(app) {
   app.get("/", homeController().index);
 
-  //customize
-  app.get("/:themeName/customize", themeController().index);
-  app.get("/:theme/changeprimarycolor", themeController().changePrimaryColor);
-};
+  app.get("/singleCategory", categoryController().singleCategory);
+}
 
 module.exports = initRoutes;

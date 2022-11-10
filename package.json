@@ -1,29 +1,36 @@
 {
-  "name": "theme_customizer",
+  "name": "test_cc",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js",
     "start": "node server.js",
-    "watch": "mix watch" ,
+    "watch": "mix watch",
     "watch-poll": "mix watch -- --watch-options-poll=1000",
     "production": "mix --production"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShubhamJethava51/theme-customizer-meen.git"
+  },
   "keywords": [],
-  "author": "Shubham",
+  "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ShubhamJethava51/theme-customizer-meen/issues"
+  },
+  "homepage": "https://github.com/ShubhamJethava51/theme-customizer-meen#readme",
   "dependencies": {
-    "axios": "^0.27.2",
-    "bootstrap": "^5.1.3",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "express-ejs-layouts": "^2.5.1",
-    "nodemon": "^2.0.16",
-    "sass": "^1.52.2"
+    "mongoose": "^6.6.6"
   },
   "devDependencies": {
-    "laravel-mix": "^6.0.48"
+    "laravel-mix": "^6.0.49",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.55.0",
+    "sass-loader": "^12.1.0"
   }
 }

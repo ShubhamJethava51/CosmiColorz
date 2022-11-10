@@ -1,0 +1,130 @@
+@import "./variables";
+
+body{
+    margin: 0;
+    font-family: 'Space Mono', monospace;
+}
+
+nav{
+    background-color: #F5F5F5;
+}
+
+.logoText{
+    font-weight: 700;
+}
+
+.nav-icon {
+    transition: $smooth;
+    &:hover{
+        color: $secondarysecond;
+    }
+}
+
+.nav-icon-logout{
+    transition: $smooth;
+    &:hover{
+        color: $primaryfirst;
+    }
+}
+
+li{
+    transition: $smooth;
+}
+
+.nav-right ul{
+    > .menu-li:nth-child(1){
+        &:hover{
+            color: white;
+            background-color: $primaryfirst;
+        }
+    }
+    > .menu-li:nth-child(2){
+        &:hover{
+            color: white;
+            background-color: $primarysecond;
+            >.category-content{
+                color: black;
+            }
+        }
+    }
+    // > li:nth-child(3){
+    //     &:hover{
+    //         color: white;
+    //         background-color: $secondaryfirst;
+    //     }
+    // }
+    // > li:nth-child(4){
+    //     &:hover{
+    //         color: white;
+    //         background-color: $secondarysecond;
+    //     }
+    // }  
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.add-to-bag{
+    &:hover{
+        background-color: $secondaryfirst;
+    }
+}
+
+.nav-left ul{
+    padding: 0;
+    margin: 0;
+}
+
+.menu{
+    list-style: none;
+}
+
+// @each $var in $list {
+    
+//     .product-card{
+//         transition: $smooth;
+//         &:hover{
+//             background-color: $var;
+//             color: white;
+//         }
+//     }
+// }
+
+.disp-prod{
+    padding: 0 6rem 0 6rem;
+}
+
+.btn-primary{
+    display: inline-block;
+    &:hover{
+        background-color: $secondarysecond;
+    }
+}
+
+.forgotPass{
+    transition: $smooth;
+    &:hover{
+        color: $primaryfirst;
+    }
+}
+
+.category-content{
+    background-color: #F5F5F5;
+    position: absolute;
+    visibility: hidden;
+    opacity: 0;
+    transition: $smooth;
+    li:hover{
+        background-color: #ebebeb;
+    }
+}
+
+.menu-li:nth-child(2){
+    &:hover > .category-content{
+        visibility: visible;
+        opacity: 1;
+    }
+}

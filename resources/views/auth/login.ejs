@@ -1,0 +1,30 @@
+
+<section class="login-form flex h-full justify-center pt-24">
+    
+    <div class="border rounded px-10 pb-10 wrapper w-full max-w-xs">
+        <form action="post">
+            <div class="flex items-center justify-center">
+                <img src="./img/stars-moon.gif">
+            </div>
+            <div class="mb-6">
+                <label class="block text-sm mb-3" for="Email">
+                    E-mail
+                </label>
+                <input name="email" class="border rounded py-2 px-3 shadow text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="Email" type="Email" placeholder="Enter your E-mail">
+            </div>
+            
+            <div class="mb-6">
+                <label class="block text-sm mb-3" for="password">
+                    Password
+                </label>
+                <input name="password" class="border rounded py-2 px-3 shadow text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Enter Your Password">
+            </div>
+            <div class="text-sm flex items-center justify-between">
+                <button class="btn-primary border-2 hover:border-black transition ease-in-out hover:border-2 hover:font-bold hover:shadow px-2 rounded-md py-2" type="submit">
+                  Log In
+                </button>
+                <a class="text-sm forgotPass" href="/forgotPassForm">Forgot Password?</a>
+              </div>
+        </form>
+    </div>
+</section>

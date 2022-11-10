@@ -1,24 +1,44 @@
-const express = require("express");
-const ejs = require("ejs");
-const expressLayout = require("express-ejs-layouts");
 const path = require("path");
-const app = express();
+const express = require("express");
+const mongoose = require("mongoose");
+const expresssLayout = require("express-ejs-layouts");
+const ejs = require("ejs");
 
-//giving access to public  folder and setting up assets
+const app = express();
+const PORT = 3000;
+process.env["NODE_TLS_REJECT_UNAUTHORIZED"] = 1;
+
+//databse connection
+
+const dbUserName = "cosmicolorzstore";
+const dbPassword = "SMS20022001";
+const dbCluster = "CosmiColorz";
+const uri = `mongodb+srv://${dbUserName}:${dbPassword}@cosmicolorz.mxtyhrn.mongodb.net/?retryWrites=true&w=majority`;
+
+mongoose.connect(uri);
+const connection = mongoose.connection;
+connection
+  .once("open", () => {
+    console.log("Database Connected!");
+  })
+  .on("error", (err) => {
+    console.log(`Connection to database failed because of: ${err}`);
+  });
+
 app.use(express.static(__dirname + "/public"));
 
-//view engine setup and laayout folder set
-app.use(expressLayout);
+//view engine setup and layout folder set
+
+app.use(expresssLayout);
 
 //set template engine
 
 app.set("views", path.join(__dirname, "/resources/views"));
 app.set("view engine", "ejs");
 
+//routing
 require("./routes/web")(app);
 
-const PORT = process.env.PORT || 8000;
-
 const server = app.listen(PORT, () => {
-  console.log(`Server listening to port ${PORT}...`);
+  console.log(`Server responsing on port ${PORT}...`);
 });
